@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4">
     <display-name>Appe ownapp</display-name>
+
+    <servlet>
+        <servlet-name>addtolist</servlet-name>
+        <servlet-class>controller.Addtolist</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addtolist</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
 </web-app>
