@@ -8,7 +8,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addtolist</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <url-pattern>/addtolist</url-pattern>
     </servlet-mapping>
 
 </web-app>
