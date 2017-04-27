@@ -1,6 +1,6 @@
 package controller;
 
-import application.Addnewusertothelist;
+import application.Listdatabase;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +22,10 @@ public class Addtolist extends HttpServlet {
         String voornaam = request.getParameter("voornaam");
         String achternaam = request.getParameter("achternaam");
 
-        addToList(voornaam, achternaam);
+
+        Listdatabase listtothedatabase = new Listdatabase(voornaam, achternaam);
+
+
 
         String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " +
                 "transitional//en\">\n";
@@ -31,24 +34,17 @@ public class Addtolist extends HttpServlet {
 
         out.println(docType +
                 "<html>\n" +
-                "<head><title>" + title + "</title></head>\n"+
-                "<body bgcolor=\"#f0f0f0\">\n" +
-                "<h1 align=\"center\">" + title + "</h1>\n" +
-                "<table width=\"100%\" border=\"1\" align=\"center\">\n" +
-                "<tr bgcolor=\"#949494\">\n" +
-                "<th>Header Name</th><th>Header Value(s)</th>\n"+
-                "</tr>\n" + "Waarde ingevuld: <br>"
+                "<head><title>" + title + "</title></head><body>\n"+
+                "<h1 align=\"center\">" + title + "</h1>\n"
+                + "Waarde ingevuld: <br>"
                 + "Voornaam: " + request.getParameter("voornaam") + "<br>"
                 + "Achternaam: " + request.getParameter("achternaam")
-                + "</table>\n</body></html>"
+                + "</body></html>"
         );
 
 
     }
 
-    public void addToList(String voornaam, String achternaam){
-        Addnewusertothelist addNewUser = new Addnewusertothelist(voornaam, achternaam);
-        addNewUser.addNewUserIntoTheListDatabase();
-    }
+
 
 }

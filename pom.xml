@@ -35,8 +35,8 @@
             <!-- de root defineren waar de WEB-INF staat met daar in de web.xml -->
             <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
-    </plugin>
-        </plugins>
+        </plugin>
+    </plugins>
     </build>
 
     <properties>
@@ -50,4 +50,6 @@
                 <scope>provided</scope>
             </dependency>
         </dependencies>
+
+
 </project>
