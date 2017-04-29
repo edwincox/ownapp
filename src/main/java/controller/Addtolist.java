@@ -23,9 +23,8 @@ public class Addtolist extends HttpServlet {
         String achternaam = request.getParameter("achternaam");
 
 
-        Listdatabase listtothedatabase = new Listdatabase(voornaam, achternaam);
-
-
+        Listdatabase objectvoordedatabase = new Listdatabase(voornaam, achternaam);
+        objectvoordedatabase.addToList(objectvoordedatabase);
 
         String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " +
                 "transitional//en\">\n";

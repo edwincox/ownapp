@@ -21,14 +21,15 @@ public class Viewlist extends HttpServlet{
             PrintWriter out = response.getWriter();
 
             // Nodige voor verficatie om welke user het gaat
-//            String voornaam = request.getParameter("voornaam");
-//            String achternaam = request.getParameter("achternaam");
+            //int number = Integer.parseInt(request.getParameter("number"));
+
+            //Listdatabase totaalAaantalObjectenInDeLijst = listdatabase.letSeeTheList(number);
 
 
-//            Listdatabase list  = new Listdatabase();
-            int totaalAaantalObjectenInDeLijst = listdatabase.letSeeTheList();
+            Listdatabase eruitgehaald = listdatabase.letSeeTheList(1);
 
-            String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " +
+
+                    String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " +
                     "transitional//en\">\n";
 
             String title = "add New User Into The List Database";
@@ -39,7 +40,7 @@ public class Viewlist extends HttpServlet{
                     "<h1 align=\"center\">" + title + "</h1>\n"
                     + "Waarde ingevuld: <br>"
                     + "totaalAaantalObjectenInDeLijst: " + request.getParameter("totaalAaantalObjectenInDeLijst") + "<br>"
-                    + "totaal = " + totaalAaantalObjectenInDeLijst
+                    + "totaal = " + eruitgehaald.getVoornaam()
                     + "</body></html>"
             );
         }

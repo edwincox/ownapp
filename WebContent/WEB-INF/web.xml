@@ -9,4 +9,14 @@
         <servlet-name>controller.Addtolist</servlet-name>
         <url-pattern>/addtolist</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>controller.Viewlist</servlet-name>
+        <servlet-class>controller.Viewlist</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>controller.Viewlist</servlet-name>
+        <url-pattern>/viewlist</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

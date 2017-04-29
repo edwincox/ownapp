@@ -8,19 +8,25 @@ public class Listdatabase {
     private String voornaam;
     private String achternaam;
 
-    private Map<String, Listdatabase> listdatabase = new HashMap<>();
+    private Map<Integer, Listdatabase> database = new HashMap<>();
 
     public Listdatabase(String voornaam, String achternaam) {
         this.voornaam = voornaam;
         this.achternaam = achternaam;
+        System.out.println("Ben er voor bij met " + voornaam + " $ " + achternaam);
     }
 
-    private void addToList(Listdatabase listdatabase){
-        this.listdatabase.put(voornaam, listdatabase);
+    public void addToList(Listdatabase listdatabase){
+        this.database.put(1, listdatabase);
     }
 
-    public int letSeeTheList(){
-        return listdatabase.size();
+    public Listdatabase letSeeTheList(int number){
+//        Listdatabase listdatabase  =  database.get(number);
+//        System.out.println(listdatabase);
+        return database.get(number);
     }
 
+    public String getVoornaam() {
+        return voornaam;
+    }
 }
