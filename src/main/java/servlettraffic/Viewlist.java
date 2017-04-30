@@ -1,6 +1,7 @@
-package controller;
+package servlettraffic;
 
-import application.Listdatabase;
+import Controller.Controller;
+import application.AccountCredentials;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,9 +12,7 @@ import java.io.PrintWriter;
 
 public class Viewlist extends HttpServlet{
 
-    private Listdatabase listdatabase;
-
-        public void doGet(HttpServletRequest request, HttpServletResponse response)
+            public void doGet(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
 
             response.setContentType("text/html");
@@ -21,16 +20,13 @@ public class Viewlist extends HttpServlet{
             PrintWriter out = response.getWriter();
 
             // Nodige voor verficatie om welke user het gaat
-            //int number = Integer.parseInt(request.getParameter("number"));
+            int number = Integer.parseInt(request.getParameter("number"));
 
-            //Listdatabase totaalAaantalObjectenInDeLijst = listdatabase.letSeeTheList(number);
+            Controller objectvoordedatabase = new Controller();
+            AccountCredentials objectOpgehaald = objectvoordedatabase.getAccountForUser(number);
 
-
-            Listdatabase eruitgehaald = listdatabase.letSeeTheList(1);
-
-
-                    String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " +
-                    "transitional//en\">\n";
+            String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " +
+            "transitional//en\">\n";
 
             String title = "add New User Into The List Database";
 
@@ -39,8 +35,9 @@ public class Viewlist extends HttpServlet{
                     "<head><title>" + title + "</title></head><body>\n"+
                     "<h1 align=\"center\">" + title + "</h1>\n"
                     + "Waarde ingevuld: <br>"
-                    + "totaalAaantalObjectenInDeLijst: " + request.getParameter("totaalAaantalObjectenInDeLijst") + "<br>"
-                    + "totaal = " + eruitgehaald.getVoornaam()
+                    + "nummer wat je hebt opgeven: " + request.getParameter("number") + "<br>"
+                    + "voornaam: " + objectOpgehaald.getVoornaam()
+                    //+ "<br> Achternaam = " + objectOpgehaald.getAchternaam()
                     + "</body></html>"
             );
         }

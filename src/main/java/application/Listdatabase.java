@@ -5,28 +5,22 @@ import java.util.Map;
 
 public class Listdatabase {
 
-    private String voornaam;
-    private String achternaam;
+    private Map<Integer, AccountCredentials> database = new HashMap<>();
 
-    private Map<Integer, Listdatabase> database = new HashMap<>();
+//    public void accountAddToList(String voornaam, String achternaam){
+//
+//        this.database.put(1, listdatabase);
+//    }
 
-    public Listdatabase(String voornaam, String achternaam) {
-        this.voornaam = voornaam;
-        this.achternaam = achternaam;
-        System.out.println("Ben er voor bij met " + voornaam + " $ " + achternaam);
+
+    public int createAccountForUser(String voornaam, String achternaam){
+
+    AccountCredentials user = new AccountCredentials(voornaam, achternaam);
+        this.database.put(0, user);
+        return 0;
     }
 
-    public void addToList(Listdatabase listdatabase){
-        this.database.put(1, listdatabase);
-    }
-
-    public Listdatabase letSeeTheList(int number){
-//        Listdatabase listdatabase  =  database.get(number);
-//        System.out.println(listdatabase);
+    public AccountCredentials getAccountForUser(int number){
         return database.get(number);
-    }
-
-    public String getVoornaam() {
-        return voornaam;
     }
 }

@@ -1,21 +1,22 @@
 package runapplication;
 
+import application.AccountCredentials;
 import application.Listdatabase;
 
 public class start {
 
     public static void main(String[] args){
 
-        Listdatabase object1 = new Listdatabase("Snoep", "Dog");
+        Listdatabase object1 = new Listdatabase();
 
-        object1.addToList(object1);
+        object1.createAccountForUser("Edwin", "Cox");
 
 
-        Listdatabase eruitgehaald = object1.letSeeTheList(1);
-
-        System.out.println(eruitgehaald);
+        AccountCredentials eruitgehaald = object1.getAccountForUser(12);
 
         System.out.println(eruitgehaald.getVoornaam());
+
+        System.out.println(eruitgehaald.getAchternaam());
     }
 
 }

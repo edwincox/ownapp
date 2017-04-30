@@ -1,6 +1,6 @@
-package controller;
+package servlettraffic;
 
-import application.Listdatabase;
+import Controller.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,9 +22,8 @@ public class Addtolist extends HttpServlet {
         String voornaam = request.getParameter("voornaam");
         String achternaam = request.getParameter("achternaam");
 
-
-        Listdatabase objectvoordedatabase = new Listdatabase(voornaam, achternaam);
-        objectvoordedatabase.addToList(objectvoordedatabase);
+        Controller objectvoordedatabase = new Controller();
+        objectvoordedatabase.createAccountForUser(voornaam, achternaam);
 
         String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " +
                 "transitional//en\">\n";
@@ -40,10 +39,5 @@ public class Addtolist extends HttpServlet {
                 + "Achternaam: " + request.getParameter("achternaam")
                 + "</body></html>"
         );
-
-
     }
-
-
-
 }

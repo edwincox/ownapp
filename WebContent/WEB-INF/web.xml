@@ -2,19 +2,19 @@
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4">
     <display-name>Appe ownapp</display-name>
     <servlet>
-        <servlet-name>controller.Addtolist</servlet-name>
-        <servlet-class>controller.Addtolist</servlet-class>
+        <servlet-name>servlettraffic.Addtolist</servlet-name>
+        <servlet-class>servlettraffic.Addtolist</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>controller.Addtolist</servlet-name>
+        <servlet-name>servlettraffic.Addtolist</servlet-name>
         <url-pattern>/addtolist</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>controller.Viewlist</servlet-name>
-        <servlet-class>controller.Viewlist</servlet-class>
+        <servlet-name>servlettraffic.Viewlist</servlet-name>
+        <servlet-class>servlettraffic.Viewlist</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>controller.Viewlist</servlet-name>
+        <servlet-name>servlettraffic.Viewlist</servlet-name>
         <url-pattern>/viewlist</url-pattern>
     </servlet-mapping>
 
